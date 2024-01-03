@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 관련 태그</title>
+
+    <!-- CSS 작성 -->
+    <style>
+        .tb3 {
+            border: 2px solid black; /* solid = 실선 */
+            border-collapse: collapse;
+        }
+
+        .tb3 th, .tb3 td {
+            border: 1px solid black;
+        }
+
+        .tb3 thead {
+            background-color: yellowgreen;
+        }
+
+        .tb3 tbody {
+            background-color: yellow;
+        }
+
+        .tb3 tfoot {
+            background-color: orange;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>표 관련 기본 태그</h2>
+    <h3>table(표)</h3>
+    <pre>
+    - 웹 문서에서 자료(데이터) 정리를 위해 사용하는 태그
+    - table 태그는 행, 열을 작성하기 위한 판 나타냄
+    </pre>
+
+    <h3>tr (table row)</h3>
+    <pre>
+    - 테이블의 행
+    </pre>
+
+    <h3>td (table data)</h3>
+    <pre>
+    - 테이블의 열, 엑셀의 셀 하나
+    </pre>
+
+    <hr>
+
+    <h4>테이블 연습 1</h4>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <td>이름</td>
+            <td>나이</td>
+            <td>주소</td>
+        </tr>
+        <tr>
+            <td>김준면</td>
+            <td>33</td>
+            <td>서울시</td>
+        </tr>
+        <tr>
+            <td>김민석</td>
+            <td>34</td>
+            <td>구리시</td>
+        </tr>
+    </table>
+
+    <br>
+    <hr><hr>
+    
+    <h2>테이블 관련 추가 태그 1</h2>
+    <h3>th (table header) </h3>
+    <pre>
+    - 테이블의 제목 or 내용 강조
+    - 굵은 글씨, 중앙정렬 자동 적용
+    </pre>
+
+    <h3>caption 태그</h3>
+    <pre>
+    - 테이블에 대한 설명, 머리말
+    </pre>
+
+    <table border="1" style="border-collapse: collapse;">
+        <caption>웹 브라우저 종류</caption>
+        <tr> <!-- 1행 -->
+            <th>브라우저</th>
+            <th>제조사</th>
+            <th>홈페이지</th>
+        </tr>
+        <tr> <!-- 2행 -->
+            <td>크롬</td>
+            <td>구글</td>
+            <td><a href="https://www.google.com">https://www.google.com</a></td>
+        </tr>
+        <tr> <!-- 3행 -->
+            <td>엣지</td>
+            <td>MS</td>
+            <td><a href="https://www.microsoft.com">https://www.microsoft.com</a></td>
+        </tr>
+        <tr> <!-- 4행 -->
+            <td>웨일</td>
+            <td>네이버</td>
+            <td><a href="https://www.naver.com">https://www.naver.com</a></td>
+        </tr>
+        <tr> <!-- 5행 -->
+            <td>파이어폭스</td>
+            <td>Mozilla</td>
+            <td><a href="https://www.mozilla.org">https://www.mozilla.org</a></td>
+        </tr>
+    </table>
+
+    <br>
+    <hr><hr>
+
+    <h2>테이블 관련 추가 태그 2</h2>
+    <pre>
+    [테이블 영역 지정 태그]
+
+    thead : 테이블 상단 영역(컬럼 제목)
+    tbody : 테이블 중간 영역(내용)
+    tfoot : 테이블 하단 영역(합계, 이런거..)
+
+    * 참고 사항
+    table 태그 내부를 thead, tbody, tfoot으로 나누지 않으면
+    모든 tr, td, th 태그는 tbody 내부에 작성된 것으로 취급.
+    </pre>
+
+    <!-- class는 .tb3 / 클래스는 쩜 -->
+    <table class="tb3">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>오세훈</td>
+                <td>30</td>
+                <td>서울시</td>
+            </tr>
+            <tr>
+                <td>김종인</td>
+                <td>30</td>
+                <td>순천시</td>
+            </tr>
+            <tr>
+                <td>도경수</td>
+                <td>31</td>
+                <td>고양시</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">총 인원</th>
+                <th>3명</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br>
+    <hr>
+
+    <h2>행, 열 병합 속성 : rowspan, colspan</h2>
+
+    <pre>
+    몇 칸 차지할 것인가
+
+    rowspan : 행 병합 (세로 병합)
+    colspan : 열 병합 (가로 병합)
+    </pre>
+
+    <table border="2" style="border-collapse: collapse;">
+        <tr> <!-- 1행 -->
+            <th colspan="3">1</th>
+            <th>2</th>
+            <th rowspan="3">3</th>
+        </tr>
+        <tr> <!-- 2행 -->
+            <th>1</th>
+            <th colspan="3">2</th>
+        </tr>
+        <tr> <!-- 3행 -->
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+        </tr>
+    </table>
+
+</body>
+</html>
